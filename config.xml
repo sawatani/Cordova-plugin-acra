@@ -1,0 +1,11 @@
+<widget id="org.fathens.cordova.acra" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>acra</name>
+    <description>
+       Cordova Plugin for ACRA
+    </description>
+    <author email="devel@fathens.org" href="http://www.fathens.org">
+        Office fathens
+    </author>
+    <access origin="*" />
+</widget>
+
