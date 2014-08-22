@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="org.fathens.cordova.acra"
+    version="0.1.0">
+
+    <name>ACRA Plugin</name>
+    
+    <description>
+		Cordova Plugin for ACRA
+    </description>
+    
+    <license>Apache 2.0</license>
+    
+    <engines>
+    	<engine name="cordova" version=">=3.5.0" />
+    </engines>
+	
+    <!-- android -->
+    <platform name="android">
+	    <preference name="MAIL_TO" />
+	    <preference name="TOAST_TEXT" />
+
+        <config-file target="res/values/strings.xml" parent="/resources">
+			<string name="acra_toast_text">$TOAST_TEXT</string>
+			<string name="acra_mail_to">$MAIL_TO</string>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+
+        <!-- cordova plugin src files -->
+        <source-file src="platforms/android/src/org/fathens/cordova/acra/AcraApplication.java" target-dir="src/org/fathens/cordova/acra" />
+
+        <source-file src="platforms/android/libs/acra-4.5.0.jar" target-dir="libs" />
+		
+		<info>
+			For completion of installation, you need to add the following attribute to `application` element.
+			
+			`android:name="org.fathens.cordova.acra.AcraApplication"`
+		</info>
+    </platform>
+</plugin>
