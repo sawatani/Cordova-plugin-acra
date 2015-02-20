@@ -21,14 +21,21 @@ public class AcraApplication extends Application {
 	// Initialization of ACRA
 	final ReportingInteractionMode mode = ReportingInteractionMode.TOAST;
 	final int toastText = getResources().getIdentifier("acra_toast_text", "string", getPackageName());
-	final String mailTo = getResources().getString(
-		getResources().getIdentifier("acra_mail_to", "string", getPackageName()));
-	Log.d(TAG, String.format("Configuration Setup: MODE=%s, TOAST_TEXT=%x, MAIL_TO='%s'", mode, toastText, mailTo));
+	final private String url = getResources().getString(
+		getResources().getIdentifier("acra_url", "string", getPackageName()));
+	final private String username = getResources().getString(
+			getResources().getIdentifier("acra_username", "string", getPackageName()));
+	final private String password = getResources().getString(
+			getResources().getIdentifier("acra_password", "string", getPackageName()));
+	Log.d(TAG, String.format("Configuration Setup: MODE=%s, TOAST_TEXT=%x, PUT_URI='%s'", mode, toastText, url));
 	try {
 	    final ACRAConfiguration config = ACRA.getNewDefaultConfig(this);
 	    config.setMode(mode);
 	    config.setResToastText(toastText);
-	    config.setMailTo(mailTo);
+	    config.setHttpMethod(org.acra.sender.HttpSender.Method.PUT);
+	    config.setFormUri(url);
+	    config.setFormUriBasicAuthLogin(username);
+	    config.setFormUriBasicAuthPassword(password);
 	    ACRA.setConfig(config);
 	    ACRA.init(this);
 	    ACRA.getErrorReporter().setReportSender(new EmailIntentSender(getApplicationContext()));
