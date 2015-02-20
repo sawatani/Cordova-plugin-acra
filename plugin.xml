@@ -17,12 +17,16 @@
 
     <!-- android -->
     <platform name="android">
-        <preference name="MAIL_TO" />
         <preference name="TOAST_TEXT" />
+        <preference name="URL" />
+        <preference name="USERNAME" />
+        <preference name="PASSWORD" />
 
         <config-file target="res/values/strings.xml" parent="/resources">
             <string name="acra_toast_text">$TOAST_TEXT</string>
-            <string name="acra_mail_to">$MAIL_TO</string>
+            <string name="acra_url">$URL</string>
+            <string name="acra_username">$USERNAME</string>
+            <string name="acra_password">$PASSWORD</string>
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
