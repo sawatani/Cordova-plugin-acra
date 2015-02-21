@@ -15,6 +15,10 @@
         <engine name="cordova" version=">=3.5.0" />
     </engines>
 
+    <js-module name="ACRA_reporter" src="www/reporter.js">
+        <clobbers target="plugin.acra" />
+    </js-module>
+
     <!-- android -->
     <platform name="android">
         <preference name="TOAST_TEXT" />
@@ -32,10 +36,18 @@
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ACRA_reporter">
+                <param name="android-package" value="org.fathens.cordova.acra.Reporter" />
+            </feature>
+        </config-file>
 
         <!-- cordova plugin src files -->
         <source-file
             src="platforms/android/src/org/fathens/cordova/acra/AcraApplication.java"
+            target-dir="src/org/fathens/cordova/acra" />
+        <source-file
+            src="platforms/android/src/org/fathens/cordova/acra/Reporter.java"
             target-dir="src/org/fathens/cordova/acra" />
 
         <source-file src="platforms/android/libs/acra-4.5.0.jar"
