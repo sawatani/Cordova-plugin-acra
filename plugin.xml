@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-    xmlns:android="http://schemas.android.com/apk/res/android" id="org.fathens.cordova.acra"
-    version="0.2.0">
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"
+    id="org.fathens.cordova.acra" version="0.2.0">
 
     <name>ACRA Plugin</name>
 
@@ -43,19 +42,13 @@
         </config-file>
 
         <!-- cordova plugin src files -->
-        <source-file
-            src="platforms/android/src/org/fathens/cordova/acra/AcraApplication.java"
-            target-dir="src/org/fathens/cordova/acra" />
-        <source-file
-            src="platforms/android/src/org/fathens/cordova/acra/Reporter.java"
-            target-dir="src/org/fathens/cordova/acra" />
+        <source-file src="platforms/android/src/org/fathens/cordova/acra/AcraApplication.java" target-dir="src/org/fathens/cordova/acra" />
+        <source-file src="platforms/android/src/org/fathens/cordova/acra/Reporter.java" target-dir="src/org/fathens/cordova/acra" />
 
-        <source-file src="platforms/android/libs/acra-4.5.0.jar"
-            target-dir="libs" />
+        <source-file src="platforms/android/libs/acra-4.5.0.jar" target-dir="libs" />
 
         <info>
-            For completion of installation, you need to add the following attribute
-            to `application` element.
+            For completion of installation, you need to add the following attribute to `application` element.
 
             `android:name="org.fathens.cordova.acra.AcraApplication"`
         </info>
